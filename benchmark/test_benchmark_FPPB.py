@@ -20,20 +20,24 @@ def Correctnesstest(Instantiation):
         x[i] = xi
     if Instantiation.AKGenVer(pp, pkA) == 0:
         print("Assisted authority key verification fails!")
-    print("Assisted authority key verification successes!")
+    else:
+        print("Assisted authority key verification successes!")
     sk, pk = Instantiation.KGen(pp, skA, pkA, f)
     if Instantiation.KGenVer(pp, pkA, pk) == 0:
         print("Auditor key verification fails!")
-    print("Auditor key verification successes!")
+    else:
+        print("Auditor key verification successes!")
     L1, L2, n = Instantiation.BSGSinitlist(pkA['egh'])
     E, Cx = Instantiation.Escrow(pp, pkA, pk, x, rx)
     if Instantiation.EscrowVer(pp, pkA, pk, E, Cx) == 0:
         print("Escrow verification fails!")
-    print("Escrow verification successes!")
+    else:
+        print("Escrow verification successes!")
     y1, pi = Instantiation.DecwithBSGS(pp, pkA, sk, pk, E, Cx,L1,L2,n)
     if y1 != y or Instantiation.Judge(pp, pk, E, Cx, y1, pi) == 0:
         print("Decryption fails!!!")
-    print("Decryption successes!!!")
+    else:
+        print("Decryption successes!!!")
     
     
 

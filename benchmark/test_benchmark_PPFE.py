@@ -20,13 +20,15 @@ def Correctnesstest(Instantiation):
     dk = Instantiation.DKGen(msk, idk)
     if Instantiation.DKVer(mpk, dk, aux, f) == 0:
         print("Decryption key verification fails!")
-    print("Decryption key verification successes!")
+    else:
+        print("Decryption key verification successes!")
     C = Instantiation.Enc(mpk, x, upk)
     L1, L2, n = Instantiation.BSGSinitlist(mpk['egh'])
     y1 = Instantiation.DecwithBSGS(mpk, dk, aux, usk, C, f,L1,L2,n)
     if y1 != y:
         print("Decryption fails!!!")
-    print("Decryption successes!!!")
+    else:
+        print("Decryption successes!!!")
 
 def Setuptest(Instantiation,l):
     t = 0

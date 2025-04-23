@@ -24,17 +24,20 @@ def Correctnesstest(Instantiation):
     ok = Instantiation.OKGen(ask, iok)
     if Instantiation.OKVer(apk, ok, aux, f) == 0:
         print("Open key verification fails!")
-    print("Open key verification successes!")
+    else:
+        print("Open key verification successes!")
     aop, pop = Instantiation.Preopen(ck, apk, x, com)
     L1, L2, n = Instantiation.BSGSinitlist(apk['egh'])
     y1, op = Instantiation.OpenwithBSGS(d, ok, aux, pop, aop,L1,L2,n)
     if y1 != y or Instantiation.Ver(ck, com, y, op, aop) == 0:
         print("Opening fails!!!")
-    print("Opening successes!!!")
+    else:
+        print("Opening successes!!!")
     y2, op2, aop2 = Instantiation.Fopen(ck, d, x)
     if y2 != y or Instantiation.Ver(ck, com, y2, op2, aop2) == 0:
         print("Fast Opening fails!!!")
-    print("Fast opening successes!!!")
+    else:
+        print("Fast opening successes!!!")
 
 def Setuptest(Instantiation,l):
     t = 0

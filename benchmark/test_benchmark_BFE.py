@@ -16,7 +16,8 @@ def Correctnesstest(Instantiation):
     sy1 = Instantiation.KDerwithBSGS(pp,y,msk)
     if sy1 != sy:
         print("Key derivation fails!!!")
-    print("Key derivation successes!!!")
+    else:
+        print("Key derivation successes!!!")
 
 def KDertest(Instantiation,l):
     t = 0
