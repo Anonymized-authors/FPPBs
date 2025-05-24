@@ -1,1 +1,1 @@
-Source Code of "Fair Privacy-Preserving Blueprints from Functional Commitments"
+Source code of the paper "Fair Privacy-Preserving Blueprints from Functional Commitments"
